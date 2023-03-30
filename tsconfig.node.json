@@ -1,8 +1,8 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.node.json",
+  "extends": "@vue/tsconfig/tsconfig.node.json", // 要是有SSR的话，必须使用node
   "include": ["vite.config.*", "vitest.config.*", "cypress.config.*", "playwright.config.*"],
   "compilerOptions": {
-    "composite": true,
-    "types": ["node"]
+    "composite": true, // 合成, 合并到tsconfig.json中， 因为tsc识别文件还是在tsconfig.json(相当于入口)
+    "types": ["node"] // 这里的node是上面include中包含的文件可能需要跑在node环境中
   }
 }

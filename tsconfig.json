@@ -1,13 +1,14 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"], // 编译的文件
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"] // 编辑的时候使用
     }
   },
 
+  // 引用，
   "references": [
     {
       "path": "./tsconfig.node.json"
