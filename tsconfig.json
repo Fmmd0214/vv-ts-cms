@@ -7,6 +7,9 @@
       "@/*": ["./src/*"] // 编辑的时候使用
     }
   },
+  "rules": {
+    "no-unused-vars": "off" // 声明，不使用不会报错
+  },
 
   // 引用，
   "references": [
