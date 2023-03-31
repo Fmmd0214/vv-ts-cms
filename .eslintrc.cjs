@@ -16,6 +16,6 @@ module.exports = {
   },
   // 规则: 对原有的规则进行覆盖
   rules: {
-    "@typescript-eslint/no-unused-vars": "off", // 对App.vue中未使用声明变量z3的警告进行隐藏
+    "vue/multi-word-component-names": "off", // 可以使用单个单词的vue组件
   },
 };
