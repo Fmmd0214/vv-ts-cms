@@ -7,8 +7,6 @@
 
 <script setup lang="ts">
 import useCounterStore from "@/store/counter";
-import "@/service/modules/home";
-import "@/service/modules/entire";
 
 const counterStore = useCounterStore();
 
