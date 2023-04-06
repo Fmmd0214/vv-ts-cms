@@ -6,12 +6,12 @@
 </template>
 
 <script setup lang="ts">
-import useCounterStore from "@/store/counter";
+import useCounterStore from '@/store/counter'
 
-const counterStore = useCounterStore();
+const counterStore = useCounterStore()
 
 function changeCounter() {
-  counterStore.changeCounterAction(999);
+  counterStore.changeCounterAction(999)
 }
 </script>
 
