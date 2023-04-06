@@ -1,21 +1,17 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "auto-imports", "components.d.ts"], // 编译的文件
+  "include": ["src/**/*", "src/**/*.vue", "env.d.ts", "auto-imports.d.ts", "components.d.ts"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"] // 编辑的时候使用
-    }
-  },
-  // "types": ["element-plus/global"], // 全局引入的时候
-  "rules": {
-    "no-unused-vars": "off" // 声明，不使用不会报错
+      "@/*": ["./src/*"]
+    },
+    // "types": ["element-plus/global"]
   },
 
-  // 引用，
   "references": [
     {
-      "path": "./tsconfig.node.json"
+      "path": "./tsconfig.config.json"
     }
   ]
 }

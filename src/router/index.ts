@@ -1,26 +1,28 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHashHistory(), // 哈希类型
-  // 映射关系：path => component 路径和组件
+  history: createWebHashHistory(),
+  // 映射关系: path => component
   routes: [
     {
       path: '/',
-      redirect: '/main',
+      redirect: '/main'
     },
     {
       path: '/login',
-      component: () => import('../views/login/Login.vue'),
+      component: () => import('../views/login/Login.vue')
     },
     {
       path: '/main',
-      component: () => import('../views/main/Main.vue'),
+      component: () => import('../views/main/Main.vue')
     },
     {
       path: '/:pathMatch(.*)',
-      component: () => import('../views/not-found/NotFound.vue'),
-    },
-  ],
+      component: () => import('../views/not-found/NotFound.vue')
+    }
+  ]
 })
+
+// 导航守卫
 
 export default router

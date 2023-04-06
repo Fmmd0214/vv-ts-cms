@@ -1,12 +1,13 @@
 <template>
   <div class="not-found">
-    <h2>输入的地址不对</h2>
+    <h2>您输入的路径地址不正确, 请联系管理员~</h2>
   </div>
 </template>
 
 <script setup lang="ts"></script>
 
-<style lang="less" scope>
+<style lang="less" scoped>
 .not-found {
+  color: purple;
 }
 </style>

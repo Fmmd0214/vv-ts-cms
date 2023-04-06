@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-    <h2>main:{{ counterStore.counter }}-{{ counterStore.doubleCounter }}</h2>
-    <button @click="changeCounter">修改</button>
+    <h2>main: {{ counterStore.counter }}-{{ counterStore.doubleCounter }}</h2>
+    <button @click="changeCounter">修改counter</button>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ function changeCounter() {
 }
 </script>
 
-<style lang="less" scope>
+<style lang="less" scoped>
 .main {
   color: red;
 }

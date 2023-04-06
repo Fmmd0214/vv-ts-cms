@@ -1,9 +1,8 @@
 <template>
   <div class="app">
-    <h2>App</h2>
-    <router-link to="/main">主要</router-link>
-    <router-link to="/login">登陆</router-link>
-    <el-row class="mb-4">
+    <router-view></router-view>
+
+    <!-- <el-row class="mb-4">
       <el-button>Default</el-button>
       <el-button type="primary">Primary</el-button>
       <el-button type="success">Success</el-button>
@@ -11,18 +10,26 @@
       <el-button type="warning">Warning</el-button>
       <el-button type="danger">Danger</el-button>
     </el-row>
+    <div>
+      <el-link href="https://element.eleme.io" target="_blank">default</el-link>
+      <el-link type="primary">primary</el-link>
+      <el-link type="success">success</el-link>
+      <el-link type="warning">warning</el-link>
+      <el-link type="danger">danger</el-link>
+      <el-link type="info">info</el-link>
+    </div> -->
 
-    <div class="slider-demo-block">
-      <span class="demonstration">Default value</span>
-      <el-slider v-model="value1" />
-    </div>
-    <router-view></router-view>
+    <!-- <el-slider v-model="value" show-input size="large" />
+    <el-slider v-model="value" show-input />
+    <el-slider v-model="value" show-input size="small" /> -->
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
-const value1 = ref(0)
-</script>
+<script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped>
+.app {
+  width: 100vw;
+  height: 100vh;
+}
+</style>

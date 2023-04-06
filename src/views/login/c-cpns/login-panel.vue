@@ -1,44 +1,48 @@
 <template>
-  <div class="panel">
-    <!-- 顶部标题 -->
+  <div class="login-panel">
+    <!-- 顶部的标题 -->
     <h1 class="title">劳资蜀道山</h1>
 
-    <!-- 中间切换tab -->
+    <!-- 中间的tabs切换 -->
     <div class="tabs">
-      <el-tabs v-model="activeTabsName" type="border-card" stretch>
+      <el-tabs type="border-card" stretch v-model="activeName">
+        <!-- 1.账号登录的Pane -->
         <el-tab-pane name="account">
-          <!-- label插槽 -->
           <template #label>
             <div class="label">
               <el-icon><UserFilled /></el-icon>
-              <div class="text">账号登陆</div>
+              <span class="text">帐号登录</span>
             </div>
           </template>
-          <!-- 账号的内容 -->
-          <PaneAccount ref="accountRef" />
+          <pane-account ref="accountRef" />
         </el-tab-pane>
-        <el-tab-pane name="phone" disabled>
-          <!-- label插槽 -->
+
+        <!-- 2.手机登录的Pane -->
+        <el-tab-pane name="phone">
           <template #label>
             <div class="label">
-              <el-icon><Iphone /></el-icon>
-              <div class="text">手机登陆</div>
+              <el-icon><Cellphone /></el-icon>
+              <span class="text">手机登录</span>
             </div>
           </template>
-          <!-- 手机的内容 -->
-          <PanePhone />
+          <pane-phone />
         </el-tab-pane>
       </el-tabs>
     </div>
 
-    <!-- 底部 -->
+    <!-- 底部区域 -->
     <div class="controls">
       <el-checkbox v-model="isRemPwd" label="记住密码" size="large" />
       <el-link type="primary">忘记密码</el-link>
     </div>
-    <el-button class="login-btn" type="primary" size="large" @click="handleLoginBtnClick"
-      >立即登录</el-button
+    <el-button
+      class="login-btn"
+      type="primary"
+      size="large"
+      @click="handleLoginBtnClick"
     >
+      立即登录
+    </el-button>
   </div>
 </template>
 
@@ -47,22 +51,21 @@ import { ref } from 'vue'
 import PaneAccount from './pane-account.vue'
 import PanePhone from './pane-phone.vue'
 
-const activeTabsName = ref('account')
-const isRemPwd = ref(false) // 没传值的时候,可以使用泛型约束
-const accountRef = ref<InstanceType<typeof PaneAccount>>() // PaneAccount是实例
+const activeName = ref('account')
+const isRemPwd = ref(false)
+const accountRef = ref<InstanceType<typeof PaneAccount>>()
 
-const handleLoginBtnClick = () => {
-  if (activeTabsName.value === 'account') {
-    // 1. 获取子组件实例
+function handleLoginBtnClick() {
+  if (activeName.value === 'account') {
     accountRef.value?.loginAction()
   } else {
-    console.log('用户在账号登陆')
+    console.log('用户在进行手机登录')
   }
 }
 </script>
 
-<style lang="less" scope>
-.panel {
+<style lang="less" scoped>
+.login-panel {
   width: 330px;
   margin-bottom: 150px;
 
