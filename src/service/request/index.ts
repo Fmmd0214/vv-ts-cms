@@ -18,18 +18,20 @@ class NETRequest {
 
   // request 实例 => axios的实例
   constructor(config: NETRequestConfig) {
-    this.instance = axios.create(config) // config: eg.配置baseURL, timeout
-    // 每个instance实例都添加拦截器
+    this.instance = axios.create(config) // config: 配置baseURL, timeout
 
+    // 每个instance实例都添加拦截器
     // 请求
     this.instance.interceptors.request.use(
       config => {
         // 可以做loading， token
         console.log('全局请求成功拦截')
+
         return config
       },
       err => {
         console.log('全局请求失败拦截')
+
         return err
       }
     )
@@ -37,10 +39,12 @@ class NETRequest {
     this.instance.interceptors.response.use(
       res => {
         console.log('全局响应成功拦截')
+
         return res
       },
       err => {
         console.log('全局响应失败拦截')
+
         return err
       }
     )
